@@ -28,8 +28,8 @@ echo "2";
         
    
     while($r = mysql_fetch_assoc($result)) {
-    	$i++;
-    	 $myJson =$myJson.'"'.$r['Post'].'":'.$r['Post'];
+    	$i = $i+1;
+    	 $myJson =$myJson.'"'.$r['Post'].'":'.$r['galeria'];
     	 if($i > $numero_rows){
 			$myJson =$myJson.','
     	 }
