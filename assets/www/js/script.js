@@ -402,7 +402,7 @@ var params = {
     }
   $.post('http://106.187.55.9/RockNclick/assets/www/wsRac.php',params,function(data){
     debugger;
-        imageList = data;
+        imageList = JSON.parse(data);
     });
 
 

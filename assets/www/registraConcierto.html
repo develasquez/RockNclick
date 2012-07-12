@@ -44,7 +44,7 @@ var params = {
 	}
 
 		 $.post('wsRac.php',params,function(data){
-        	alert(data.data);
+        	alert(JSON.parse(data).data);
         	$("#txtPost").val("");
         	$("#txtGaleria").val("");
 
