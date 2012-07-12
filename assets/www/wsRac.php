@@ -36,6 +36,7 @@ function Conectarse()
     }
 
  $myJson =$myJson."}";
+}
 
 
 ?>
