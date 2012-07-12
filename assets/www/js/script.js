@@ -395,8 +395,10 @@ if(botonera.reproduce){
 
 /*-------------------------INIT---------*/
 
-$(function(){
-var params = {
+
+
+$(document).bind('pageinit',function(){
+    var params = {
     
     metodo : "getListaImagenes"
     }
@@ -405,11 +407,6 @@ var params = {
         imageList = JSON.parse(data);
     });
 
-
-})
-
-
-$(document).bind('pageinit',function(){
 
 if (!mostroSplash){
 $("#splash_img_full").show().attr("src","img/sony.png").width($(window).width()).height($(window).height())
