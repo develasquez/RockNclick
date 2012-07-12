@@ -23,7 +23,7 @@
 
 <br>
 <br>
-<input type="button" value="guardar" >
+<input type="button" value="guardar" id="guardar" >
 
 
 	</div>
@@ -31,6 +31,29 @@
 	
 </div>
 </body>
+<script type="text/javascript">
+
+$(function(){
+
+	$("#guardar").on("click",function(){
+var params = {
+	
+	metodo : "insertConcierto",
+	txtPost: $("#txtPost").val(),
+	txtGaleria:$("#txtGaleria").val()
+	}
+
+		 $.get('wsRac.php',params,function(data){
+        	debugger;
+
+        	
+    	});
+
+	})
+
+})
+
+</script>
 </html>
 
 
