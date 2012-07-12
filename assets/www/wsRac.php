@@ -1,5 +1,5 @@
 <?
-echo "1";
+
 function Conectarse() 
 { 
    
@@ -16,7 +16,7 @@ function Conectarse()
    return $link; 
 } 
 
-echo "2";
+
  $link=Conectarse(); 
  $query = "select Post ,galeria from Imagenes";
  $myJson = "{";
@@ -25,9 +25,10 @@ echo "2";
     $numero_rows = mysql_num_rows($result);
     $i = 0;
   
-        
+
    
     while($r = mysql_fetch_assoc($result)) {
+
     	$i = $i+1;
     	 $myJson =$myJson.'"'.$r['Post'].'":'.$r['galeria'];
     	 if($i > $numero_rows){
@@ -37,6 +38,6 @@ echo "2";
 
  $myJson =$myJson."}";
 
-
+echo $myJson;
 
 ?>
