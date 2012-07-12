@@ -17,6 +17,24 @@ function Conectarse()
 } 
 
 
+
+
+
+
+
+function insertConcierto(){
+ $post = $_POST["txtPost"];
+ $galeria = $_POST["txtGaleria"];
+
+ $link=Conectarse(); 
+ $query = "insert into Imagenes (Post, galeria) values (".$post.",".$galeria.");";
+ $result=mysql_query($query,$link); 
+	echo '{"success":true, "data":"Ok", "errors":"" }';
+}
+
+
+function getListaImagenes(){
+
  $link=Conectarse(); 
  $query = "select Post ,galeria from Imagenes";
  $myJson = "{";
@@ -39,5 +57,20 @@ function Conectarse()
  $myJson =$myJson."}";
 
 echo $myJson;
+}
+
+
+$metodo = $_POST["metodo"];
+
+if ($metodo == "insertConcierto")
+{
+insertConcierto();
+
+}else{
+getListaImagenes();
+
+}
+
+
 
 ?>
