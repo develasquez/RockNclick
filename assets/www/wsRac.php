@@ -18,7 +18,24 @@ function Conectarse()
 
 
  $link=Conectarse(); 
+ $query = "select Post ,galeria from Imagenes";
+ $myJson = "{";
+ $result=mysql_query($query,$link); 
+    $rows = array();
+    $numero_rows = mysql_num_rows($result);
+    $i = 0;
+    if($numero_rows > 0){
+        
+   
+    while($r = mysql_fetch_assoc($result)) {
+    	$i++;
+    	 $myJson =$myJson.'"'.$r['Post'].'":'.$r['Post'];
+    	 if($i > $numero_rows){
+			$myJson =$myJson.','
+    	 }
+    }
 
- 
+ $myJson =$myJson."}";
+
 
 ?>
