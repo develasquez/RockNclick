@@ -1,5 +1,5 @@
 <?
-
+echo "1";
 function Conectarse() 
 { 
    
@@ -16,7 +16,7 @@ function Conectarse()
    return $link; 
 } 
 
-echo "string";
+echo "2";
  $link=Conectarse(); 
  $query = "select Post ,galeria from Imagenes";
  $myJson = "{";
