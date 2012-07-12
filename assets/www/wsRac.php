@@ -31,7 +31,7 @@ function Conectarse()
 
     	$i = $i+1;
     	 $myJson =$myJson.'"'.$r['Post'].'":'.$r['galeria'];
-    	 if($i > $numero_rows){
+    	 if($i < $numero_rows){
 			$myJson =$myJson.',';
     	 }
     }
