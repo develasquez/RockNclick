@@ -66,7 +66,9 @@ if ($metodo == "insertConcierto")
 {
 insertConcierto();
 
-}else{
+}
+
+if  ($metodo == "getListaImagenes"){
 getListaImagenes();
 
 }
