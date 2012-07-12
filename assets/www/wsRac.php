@@ -31,7 +31,7 @@ echo "2";
     	$i = $i+1;
     	 $myJson =$myJson.'"'.$r['Post'].'":'.$r['galeria'];
     	 if($i > $numero_rows){
-			$myJson =$myJson.','
+			$myJson =$myJson.',';
     	 }
     }
 
