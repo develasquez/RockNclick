@@ -16,7 +16,7 @@ function Conectarse()
    return $link; 
 } 
 
-
+echo "string";
  $link=Conectarse(); 
  $query = "select Post ,galeria from Imagenes";
  $myJson = "{";
@@ -24,7 +24,7 @@ function Conectarse()
     $rows = array();
     $numero_rows = mysql_num_rows($result);
     $i = 0;
-    if($numero_rows > 0){
+  
         
    
     while($r = mysql_fetch_assoc($result)) {
@@ -36,7 +36,7 @@ function Conectarse()
     }
 
  $myJson =$myJson."}";
-}
+
 
 
 ?>
