@@ -396,9 +396,13 @@ if(botonera.reproduce){
 /*-------------------------INIT---------*/
 
 $(function(){
-
-  $.get('http://rockandclick.cl/wp-admin/admin-ajax.php',params,function(data){
-        imageList = JSON.parse(data);
+var params = {
+    
+    metodo : "getListaImagenes"
+    }
+  $.post('http://106.187.55.9/RockNclick/assets/www/wsRac.php',params,function(data){
+    debugger;
+        imageList = data;
     });
 
 

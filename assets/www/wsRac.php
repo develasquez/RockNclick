@@ -1,5 +1,5 @@
 <?
-
+header('Access-Control-Allow-Origin: *');
 function Conectarse() 
 { 
    
