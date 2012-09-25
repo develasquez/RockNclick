@@ -65,7 +65,7 @@ function getListaVideos(){
 
  $link=Conectarse(); 
  $query = "select Post ,Video from Imagenes where Video <> '' ";
- $myJson = "{";
+ $myJson = "";
  $result=mysql_query($query,$link); 
     $rows = array();
     $numero_rows = mysql_num_rows($result);
@@ -80,7 +80,7 @@ function getListaVideos(){
        $myJson =$iframeInicio.addslashes($r['Video']).$iframeFin;
       
      
-       }
+       
     }
 
 
