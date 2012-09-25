@@ -76,7 +76,7 @@ function getListaVideos(){
     while($r = mysql_fetch_assoc($result)) {
 
       $i = $i+1;
-       $myJson =$myJson.'"'.$r['Post'].'":"'.$r['Video'].'"');
+       $myJson =$myJson.'"'.$r['Post'].'":"'.$r['Video'].'"';
        if($i < $numero_rows){
       $myJson =$myJson.',';
        }
