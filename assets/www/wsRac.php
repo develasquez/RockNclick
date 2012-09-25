@@ -77,7 +77,7 @@ function getListaVideos(){
 
 
 
-   $iframeInicio = '<iframe class="iframeVideo"  width="180" height="132" src="http://www.youtube.com/embed/';
+   $iframeInicio = '<iframe class="iframeVideo"  width="19em" height="60%" src="http://www.youtube.com/embed/';
    $iframeFin= '?autoplay=1" frameborder="0" allowfullscreen=""></iframe>';
     while($r = mysql_fetch_assoc($result)) {
 
@@ -87,7 +87,7 @@ function getListaVideos(){
       $pos1 = strrpos($mystring, "?",0) +3;
       $pos2 = strrpos($mystring, "&",0);
       $url = substr($mystring, $pos1, 11);
-      $myJson =$iframeInicio.$url.$iframeFin;
+      $myJson = $myJson.$iframeInicio.$url.$iframeFin;
                
     }
 
