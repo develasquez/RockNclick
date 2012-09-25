@@ -73,7 +73,7 @@ function getListaVideos(){
   
 
    $iframeInicio = ' <iframe id="vid" width="180" height="132" src="';
-   $iframeFin= '" frameborder="0" allowfullscreen=""></iframe>'
+   $iframeFin= '" frameborder="0" allowfullscreen=""></iframe>';
     while($r = mysql_fetch_assoc($result)) {
 
       $i = $i+1;
