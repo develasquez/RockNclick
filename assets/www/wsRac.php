@@ -67,7 +67,7 @@ echo $myJson;
 function getListaVideos(){
 
  $link=Conectarse(); 
- $query = "select Post ,Video from Imagenes where Video <> '' ";
+ $query = "select Post ,Video from Imagenes where Video <> '' order by Post desc  ";
  $myJson = "";
  $result=mysql_query($query,$link); 
     $rows = array();
