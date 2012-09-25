@@ -77,8 +77,8 @@ function getListaVideos(){
 
 
 
-   $iframeInicio = '<iframe class="iframeVideo"  width="19em" height="60%" src="http://www.youtube.com/embed/';
-   $iframeFin= '?autoplay=0" frameborder="0" allowfullscreen=""></iframe>';
+   $iframeInicio = '<a href="#"><iframe class="iframeVideo"  width="19em" height="60%" src="http://www.youtube.com/embed/';
+   $iframeFin= '?autoplay=0" frameborder="0" allowfullscreen=""></iframe></a>';
     while($r = mysql_fetch_assoc($result)) {
 
        
