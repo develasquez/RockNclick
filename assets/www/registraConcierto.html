@@ -20,6 +20,8 @@
   <input type="text" id="txtPost" value="" placeholder class=""    /> 
   <label id="lblGaleria" class="form"  for="txtGaleria">Numero de la Galeria</Label>
   <input type="text" id="txtGaleria" value="" placeholder="" class=" "    /> 
+   <label id="lblVideo" class="form"  for="txtVideo">Video (Opcional)</Label>
+  <input type="text" id="txtVideo" value="" placeholder="" class=" "    /> 
 
 <br>
 <br>
@@ -40,7 +42,8 @@ var params = {
 	
 	metodo : "insertConcierto",
 	txtPost: $("#txtPost").val(),
-	txtGaleria:$("#txtGaleria").val()
+	txtGaleria:$("#txtGaleria").val(),
+	txtVideo:$("#txtVideo").val()
 	}
 
 		 $.post('wsRac.php',params,function(data){

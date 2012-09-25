@@ -25,9 +25,10 @@ function Conectarse()
 function insertConcierto(){
  $post = $_POST["txtPost"];
  $galeria = $_POST["txtGaleria"];
+ $video = $_POST["txtVideo"];
 
  $link=Conectarse(); 
- $query = "insert into Imagenes (Post, galeria) values (".$post.",".$galeria.");";
+ $query = "insert into Imagenes (Post, galeria, video) values (".$post.",".$galeria.",".$video.");";
  $result=mysql_query($query,$link); 
 	echo '{"success":true, "data":"Ok", "errors":"" }';
 }
@@ -60,6 +61,35 @@ echo $myJson;
 }
 
 
+function getListaVideos(){
+
+ $link=Conectarse(); 
+ $query = "select Post ,Video from Imagenes where Video <> '' ";
+ $myJson = "{";
+ $result=mysql_query($query,$link); 
+    $rows = array();
+    $numero_rows = mysql_num_rows($result);
+    $i = 0;
+  
+
+   
+    while($r = mysql_fetch_assoc($result)) {
+
+      $i = $i+1;
+       $myJson =$myJson.'"'.$r['Post'].'":'.$r['Video'];
+       if($i < $numero_rows){
+      $myJson =$myJson.',';
+       }
+    }
+
+ $myJson =$myJson."}";
+
+echo $myJson;
+}
+
+
+
+
 $metodo = $_POST["metodo"];
 
 if ($metodo == "insertConcierto")
@@ -73,6 +103,9 @@ getListaImagenes();
 
 }
 
+if  ($metodo == "getListaVideos"){
+getListaVideos();
 
+}
 
 ?>
