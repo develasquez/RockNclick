@@ -81,23 +81,14 @@ function getListaVideos(){
    $iframeFin= '?autoplay=1" frameborder="0" allowfullscreen=""></iframe>';
     while($r = mysql_fetch_assoc($result)) {
 
-   
-  $mystring =addslashes($r['Video']);
-  echo($mystring."-");
-
-   $largo = strlen($mystring);
-   echo($largo."-");
-  $pos1 = strrpos($mystring, "?",0) +2;
-  echo($pos1."-");
-  $pos2 = strrpos($mystring, "&",0);
-  echo ($pos2."-");
-  $url = substr($mystring, $pos1, ($largo - $pos1 -($pos2 - $pos1) + 1));
-  echo $url."-";
-
-       $myJson =$iframeInicio.$url.$iframeFin;
-      
-     
        
+      $mystring =addslashes($r['Video']);
+      $largo = strlen($mystring);
+      $pos1 = strrpos($mystring, "?",0) +2;
+      $pos2 = strrpos($mystring, "&",0);
+      $url = substr($mystring, $pos1, ($largo - $pos1 -($pos2 - $pos1) + 1));
+      $myJson =$iframeInicio.$url.$iframeFin;
+               
     }
 
 
