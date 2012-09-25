@@ -23,9 +23,9 @@ function Conectarse()
 
 
 function insertConcierto(){
- $post = $_POST["txtPost"];
- $galeria = $_POST["txtGaleria"];
- $video = $_POST["txtVideo"];
+ $post = $_REQUEST["txtPost"];
+ $galeria = $_REQUEST["txtGaleria"];
+ $video = $_REQUEST["txtVideo"];
 
  $link=Conectarse(); 
  $query = "insert into Imagenes (Post, galeria, video) values (".$post.",".$galeria.",".$video.");";
@@ -90,7 +90,7 @@ echo $myJson;
 
 
 
-$metodo = $_POST["metodo"];
+$metodo = $_REQUEST["metodo"];
 
 if ($metodo == "insertConcierto")
 {
