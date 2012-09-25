@@ -83,16 +83,16 @@ function getListaVideos(){
 
    
   $mystring =addslashes($r['Video']);
-  echo($mystring);
+  echo($mystring."-");
 
    $largo = strlen($mystring);
-   echo($largo);
+   echo($largo."-");
   $pos1 = strrpos($mystring, "=");
-  echo($pos1);
+  echo($pos1."-");
   $pos2 = strrpos($mystring, "&");
-  echo ($pos2);
+  echo ($pos2."-");
   $url = substr($mystring, $pos1, ($largo - $pos1 -($pos2 - $pos1) + 1));
-  echo $url;
+  echo $url."-";
 
        $myJson =$iframeInicio.$url.$iframeFin;
       
