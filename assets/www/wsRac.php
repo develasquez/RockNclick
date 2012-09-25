@@ -72,11 +72,12 @@ function getListaVideos(){
     $i = 0;
   
 
-   
+   $iframeInicio = ' <iframe id="vid" width="180" height="132" src="';
+   $iframeFin= '" frameborder="0" allowfullscreen=""></iframe>'
     while($r = mysql_fetch_assoc($result)) {
 
       $i = $i+1;
-       $myJson =$myJson.'"'.$r['Post'].'":"'.addslashes($r['Video']).'"';
+       $myJson =$myJson.'"'.$r['Post'].'":"'.$iframeInicio.addslashes($r['Video']).$iframeFin.'"';
        if($i < $numero_rows){
       $myJson =$myJson.',';
        }
