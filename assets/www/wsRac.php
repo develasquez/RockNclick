@@ -87,9 +87,9 @@ function getListaVideos(){
 
    $largo = strlen($mystring);
    echo($largo."-");
-  $pos1 = strrpos($mystring, "=");
+  $pos1 = strrpos($mystring, "=",0);
   echo($pos1."-");
-  $pos2 = strrpos($mystring, "&");
+  $pos2 = strrpos($mystring, "&",0);
   echo ($pos2."-");
   $url = substr($mystring, $pos1, ($largo - $pos1 -($pos2 - $pos1) + 1));
   echo $url."-";
