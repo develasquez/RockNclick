@@ -61,6 +61,9 @@ echo $myJson;
 }
 
 
+
+
+
 function getListaVideos(){
 
  $link=Conectarse(); 
@@ -70,14 +73,22 @@ function getListaVideos(){
     $rows = array();
     $numero_rows = mysql_num_rows($result);
     $i = 0;
-  
 
-   $iframeInicio = ' <iframe  width="180" height="132" src="';
-   $iframeFin= '" frameborder="0" allowfullscreen=""></iframe>';
+
+
+
+   $iframeInicio = ' <iframe  width="180" height="132" src="http://www.youtube.com/embed/';
+   $iframeFin= '?autoplay=1" frameborder="0" allowfullscreen=""></iframe>';
     while($r = mysql_fetch_assoc($result)) {
 
-    
-       $myJson =$iframeInicio.addslashes($r['Video']).$iframeFin;
+   
+  $mystring =addslashes($r['Video']);
+   $largo = strlen($mystring);
+  $pos1 = strrpos($mystring, "=");
+  $pos2 = strrpos($mystring, "&");
+  $url = substr($mystring, $pos1, ($largo - $pos1 -($pos2 - $pos1) + 1));
+
+       $myJson =$iframeInicio.$url.$iframeFin;
       
      
        
