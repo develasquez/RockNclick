@@ -28,7 +28,7 @@ function insertConcierto(){
  $video = $_REQUEST["txtVideo"];
 
  $link=Conectarse(); 
- $query = "insert into Imagenes (Post, galeria, video) values (".$post.",".$galeria.",".$video.");";
+ $query = "insert into Imagenes (Post, galeria, Video) values (".$post.",".$galeria.",'".$video."');";
  $result=mysql_query($query,$link); 
 	echo '{"success":true, "data":"Ok", "errors":"" }';
 }
