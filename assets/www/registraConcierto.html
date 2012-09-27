@@ -46,7 +46,7 @@ var params = {
 	txtVideo:$("#txtVideo").val()
 	}
 
-		 $.post('wsRac.php',params,function(data){
+		 $.post('http://106.187.55.9/RockNclick/assets/www/wsRac.php',params,function(data){
         	alert(JSON.parse(data).data);
         	$("#txtPost").val("");
         	$("#txtGaleria").val("");
