@@ -1,5 +1,4 @@
 
-
 <?
 header('Access-Control-Allow-Origin: *');
 function Conectarse() 
@@ -80,7 +79,7 @@ function getListaVideos(){
 
 
    $iframeInicio = '<a href="#" class="iframeVideo"><iframe   width="100%" height="100%" src="http://www.youtube.com/embed/';
-   $iframeFin= '?autoplay=0" frameborder="0" allowfullscreen=""></iframe></a>';
+   $iframeFin= '?autoplay=0&html5=1" frameborder="0" allowfullscreen=""></iframe></a>';
     while($r = mysql_fetch_assoc($result)) {
 
        
