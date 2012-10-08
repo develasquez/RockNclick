@@ -81,7 +81,7 @@ function getListaVideos(){
     while($r = mysql_fetch_assoc($result)) {
 
        
-      $mystring ='<div class="iframeVideo"><img  width="100%" height="100%" src="video/thumbs/' . addslashes($r['Video']).'.png" video="'.addslashes($r['Video']).'.ogv" /></div>';
+      $mystring ='<div class="iframeVideo"><img  width="100%" height="100%" src="videos/thumbs/' . addslashes($r['Video']).'.png" video="'.addslashes($r['Video']).'.ogv" /></div>';
       $myJson = $myJson.$mystring;
                
     }
