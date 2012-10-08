@@ -77,13 +77,12 @@ function getListaVideos(){
 
 
 
-   $iframeInicio = '<div class="iframeVideo"><img  width="100%" height="100%" src="video/thumbs/';
-   $iframeFin= '.png" /></div>';
+  
     while($r = mysql_fetch_assoc($result)) {
 
        
-      $mystring =addslashes($r['Video']);
-      $myJson = $myJson.$iframeInicio.$mystring.$iframeFin;
+      $mystring ='<div class="iframeVideo"><img  width="100%" height="100%" src="video/thumbs/' . addslashes($r['Video']).'.png" video="'.addslashes($r['Video']).'.ogv" /></div>';
+      $myJson = $myJson.$mystring;
                
     }
 
