@@ -1,4 +1,3 @@
-
 <?
 header('Access-Control-Allow-Origin: *');
 function Conectarse() 
@@ -78,17 +77,13 @@ function getListaVideos(){
 
 
 
-   $iframeInicio = '<a href="#" class="iframeVideo"><iframe   width="100%" height="100%" src="http://www.youtube.com/embed/';
-   $iframeFin= '?autoplay=0&html5=1" frameborder="0" allowfullscreen=""></iframe></a>';
+   $iframeInicio = '<div class="iframeVideo"><img  width="100%" height="100%" src="video/thumbs/';
+   $iframeFin= '.png" /></div>';
     while($r = mysql_fetch_assoc($result)) {
 
        
       $mystring =addslashes($r['Video']);
-      $largo = strlen($mystring);
-      $pos1 = strrpos($mystring, "?",0) +3;
-      $pos2 = strrpos($mystring, "&",0);
-      $url = substr($mystring, $pos1, 11);
-      $myJson = $myJson.$iframeInicio.$url.$iframeFin;
+      $myJson = $myJson.$iframeInicio.$mystring.$iframeFin;
                
     }
 
