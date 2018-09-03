@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 function Conectarse() 
 { 
    
-   if (!($link=mysql_connect("localhost","root","devenew1"))) 
+   if (!($link=mysql_connect("localhost","root","**********"))) 
    { 
       echo '{"success":true, "data":[], "errors":"Error al conectar con la Base de Datos" }'; 
       exit(); 
